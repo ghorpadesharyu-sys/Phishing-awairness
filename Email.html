@@ -1,1 +1,32 @@
-
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulation Email</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="nav"><div class="nav-inner"><div class="brand">CyberSafe Lab</div><div><a href="index.html">Home</a><a href="result.html">Results</a></div></div></div>
+<div class="container">
+<div class="email-window">
+<div class="email-top">
+<div><b>From:</b> Campus Services &lt;service@campus-alert.example&gt;</div>
+<div><b>Subject:</b> Action required: verify your student portal session</div>
+<div class="small muted">This is a simulated message for an academic exercise.</div>
+</div>
+<div class="email-body">
+<p>Hello Student,</p>
+<p>We noticed an unusual sign-in attempt on your student portal. To keep your account active, please review the activity using the secure portal below.</p>
+<p><b>Important:</b> Please complete the review today to avoid temporary account restrictions.</p>
+<p><a class="fake-link" href="login.html" onclick="recordClick()">Review account activity</a></p>
+<p>Regards,<br>Campus Services (Simulation)</p>
+<hr>
+<p class="small muted">Simulation cue checklist: unexpected request, urgency, generic greeting, and a login link. Never use these patterns to test people without consent.</p>
+</div></div>
+<div class="card">
+<h2>Participant action</h2>
+<p>If this were an actual suspicious message, the safer response would be to avoid the link and verify the request using a known official website or contact method.</p>
+<button class="btn secondary" onclick="recordReport(); alert('Report recorded locally for the demonstration.')">Report as suspicious</button>
+<a class="btn" href="login.html" onclick="recordClick()">Continue to demonstration page</a>
+</div>
+</div>
+<div class="footer">No external email is sent by this project.</div>
+<script src="app.js"></script>
+</body></html>
