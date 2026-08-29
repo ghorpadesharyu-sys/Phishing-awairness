@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulation Results</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="nav"><div class="nav-inner"><div class="brand">CyberSafe Lab</div><div><a href="index.html">Home</a><a href="email.html">Simulation</a></div></div></div>
+<div class="container">
+<div class="card">
+<h1>Local Results Dashboard</h1>
+<p class="muted">These counters are stored only in this browser using localStorage.</p>
+<div class="grid">
+<div><div class="metric" id="emailViews">0</div><div>Email views</div></div>
+<div><div class="metric" id="clicks">0</div><div>Link clicks</div></div>
+<div><div class="metric" id="dataAttempts">0</div><div>Demo data-entry attempts</div></div>
+</div>
+<div class="grid" style="margin-top:22px">
+<div><div class="metric" id="reports">0</div><div>Reports</div></div>
+<div><div class="metric" id="clickRate">0%</div><div>Click rate</div></div>
+<div><div class="metric">0</div><div>Credentials stored</div></div>
+</div>
+</div>
+<div class="card">
+<h2>Interpretation</h2>
+<ul>
+<li>A high click rate indicates that the message's social-engineering cues deserve attention.</li>
+<li>Data-entry attempts indicate a stronger risky behavior than clicking alone.</li>
+<li>Reports indicate users recognized or suspected the simulation.</li>
+<li>Use these measures to target awareness training; do not shame individual participants.</li>
+</ul>
+</div>
+<div class="card">
+<h2>Reset local counters</h2>
+<button class="btn danger" onclick="resetMetrics()">Reset dashboard</button>
+</div>
+</div>
+<div class="footer">Local-only academic demonstration</div>
+<script src="app.js"></script>
+</body></html>
