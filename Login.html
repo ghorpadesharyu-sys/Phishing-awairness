@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demonstration Login</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="login-wrap">
+<div class="login-card">
+<div class="badge">SIMULATION</div>
+<h2>Student Portal</h2>
+<p class="muted">This is a fake login page used only for the academic awareness demonstration.</p>
+<form id="demoForm">
+<label for="uid">Demo User ID</label>
+<input id="uid" autocomplete="off" placeholder="Example: student123">
+<label for="pwd">Demo Password</label>
+<input id="pwd" type="password" autocomplete="off" placeholder="Do not use a real password">
+<button class="btn" type="submit">Sign in</button>
+</form>
+<div id="notice" class="warning small" style="margin-top:18px">Never enter a real password into a training simulation.</div>
+<p><a href="email.html">Back to email</a></p>
+</div></div>
+<script src="app.js"></script>
+<script>
+document.getElementById("demoForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  recordDataAttempt();
+  // Values are deliberately not read, stored, transmitted, or logged.
+  this.reset();
+  document.getElementById("notice").className="success small";
+  document.getElementById("notice").textContent="Simulation captured only the fact that a data-entry attempt occurred. Any entered values were discarded.";
+});
+</script>
+</body></html>
