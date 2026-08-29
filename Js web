@@ -1,0 +1,37 @@
+
+const KEY = "phishing_demo_metrics_v1";
+function metrics(){
+  const raw = localStorage.getItem(KEY);
+  return raw ? JSON.parse(raw) : {emailViews:0, clicks:0, dataAttempts:0, reports:0};
+}
+function save(m){localStorage.setItem(KEY, JSON.stringify(m));}
+function increment(field){
+  const m=metrics(); m[field] = (m[field]||0)+1; save(m);
+}
+function recordClick(){
+  increment("clicks");
+}
+function recordDataAttempt(){
+  increment("dataAttempts");
+}
+function recordReport(){
+  increment("reports");
+}
+function recordEmailView(){
+  increment("emailViews");
+}
+function resetMetrics(){
+  localStorage.removeItem(KEY);
+  location.reload();
+}
+function showMetrics(){
+  const m=metrics();
+  const set=(id,v)=>{const el=document.getElementById(id); if(el) el.textContent=v;};
+  set("emailViews",m.emailViews);
+  set("clicks",m.clicks);
+  set("dataAttempts",m.dataAttempts);
+  set("reports",m.reports);
+  const rate=(m.emailViews?((m.clicks/m.emailViews)*100).toFixed(1):"0.0");
+  set("clickRate",rate+"%");
+}
+document.addEventListener("DOMContentLoaded", showMetrics);
